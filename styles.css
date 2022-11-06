@@ -30,10 +30,19 @@
   background-color: #aaa;
 }
 
-.cardFront{
+.cardFront {
   display: none;
   background-color: #333;
 }
+
+.clicked .cardBack {
+  display: none;
+}
+
+.clicked .cardFront{
+  display: Block;
+}
+
 /* card pictures -- cards of # + front */
 .pic1 .cardFront {
   background-image: url(images/dog1.jpg);
