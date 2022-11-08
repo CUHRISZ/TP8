@@ -50,22 +50,45 @@ function cardCompare() {
 }
 
 function removeCards(cardA, cardB) {
-  cardA.classList.remove("clicked");
-  cardB.classList.remove("clicked");
   
-  cardA.classList.add("matched");
-  cardB.classList.add("matched");
-  
-  cardsClicked = 0;
+  pause = setTimeout(function() {
+    
+    cardA.classList.remove("clicked");
+    cardB.classList.remove("clicked");
+
+    cardA.classList.add("matched");
+    cardB.classList.add("matched");
+
+    cardsClicked = 0;
+    
+    checkWinning();
+  }, 1000); //do code after 1000 milliseconds
 }
 
 function unflipCards(cardA, cardB) {
+  
+  pause = setTimeout(function() {
   cardA.classList.remove("clicked");
   cardB.classList.remove("clicked");
   
   cardsClicked = 0;
+  }, 1000);
 }
 
+function checkWinning() {
+  remainingCards = document.querySelectorAll(".card");
+  
+  countCards = remainingCards.length;
+  
+  //cycle through all cards and check for matched class
+  for (c = 0; c < remainingCards.length; c++) {
+    if ( !remainingCards[c].classList.contains("matched") ) {
+      return;
+    }
+  }
+  
+  document.getElementById("mainTable").innerHTML = "You won!";
+}
 // when page loads
 window.onload = function() {
   
