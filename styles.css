@@ -4,16 +4,16 @@
 }
 /* table */
 #mainTable {
-  width: 80vw;
-  height: 80vh;
+  width: 90vw;
+  height: 60vh;
   position: relative;
   margin: 10vh auto;
 }
 /* card formats */
 .card {
   position: relative;
-  width: 20vw;
-  height: 20vw;
+  width: 15vw;
+  height: 15vw;
   float: left;
   border: 10px solid #fff;
   background-color: #ccc;
@@ -48,10 +48,25 @@
   background-size: cover;
 }
 .pic2 .cardFront {
-  background-image: url(images/dog2.jpg);
+  background-image: url(images/pumpkin1.jpg);
   background-size: cover;
 }
-
+.pic3 .cardFront {
+  background-image: url(images/guitar1.jpg);
+  background-size: cover;
+}
+.pic4 .cardFront {
+  background-image: url(images/tiger1.jpg);
+  background-size: cover;
+}
+.pic5 .cardFront {
+  background-image: url(images/pizza1.jpg);
+  background-size: cover;
+}
+.pic6 .cardFront {
+  background-image: url(images/flower1.jpg);
+  background-size: cover;
+}
 .card.matched div {
   display: none;
 }

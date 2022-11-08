@@ -36,6 +36,14 @@ function cardCompare() {
     matched = true; //matches pic 1
   } else if (clickedCards[0].classList.contains("pic2") && clickedCards[1].classList.contains("pic2") ) {
     matched = true; //matches pic 2
+  } else if (clickedCards[0].classList.contains("pic3") && clickedCards[1].classList.contains("pic3") ) {
+    matched = true; //matches pic 2
+  } else if (clickedCards[0].classList.contains("pic4") && clickedCards[1].classList.contains("pic4") ) {
+    matched = true; //matches pic 2
+  } else if (clickedCards[0].classList.contains("pic5") && clickedCards[1].classList.contains("pic5") ) {
+    matched = true; //matches pic 2
+  } else if (clickedCards[0].classList.contains("pic6") && clickedCards[1].classList.contains("pic6") ) {
+    matched = true; //matches pic 2
   }
   
   if (matched) {
@@ -89,9 +97,28 @@ function checkWinning() {
   
   document.getElementById("mainTable").innerHTML = "You won!";
 }
+
+function shuffleCards() {
+  //function gets main table, gets children length, then does loop which
+  //goes through card count and creates a random selection, then tells table
+  //to move selection to end
+  table = document.querySelector("#mainTable");
+  cardCount = table.children.length;
+  
+  cardToMove = table.children[0]
+  table.appendChild( cardToMove );
+  
+  for (c = 0; c < cardCount; c++) {
+    randomCard = Math.floor( Math.random() * cardCount );
+    cardToMove = table.children[randomCard]
+    table.appendChild( cardToMove );
+  }
+}
+
 // when page loads
 window.onload = function() {
   
+  shuffleCards();
 
   cardList = document.getElementsByClassName("card"); // collects cards
   
